@@ -1,0 +1,92 @@
+@use "../variables" as *;
+
+.footer {
+  padding: 50px 0 32px;
+  background-color: $green;
+  color: $light;
+  background-image: url("/img/footer/paw.svg");
+  background-repeat: no-repeat;
+  background-position: 41vw 50px;
+  // .footer__container
+
+  &__container {
+    display: grid;
+    row-gap: 50px;
+    grid-template-areas:
+      "logo contacts"
+      "info contacts";
+  }
+
+  // .footer__logo
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  // .footer__info
+
+  &__info {
+    grid-area: info;
+  }
+
+  // .footer__copyright
+
+  &__copyright {
+    font-size: 16px;
+    margin-bottom: 17px;
+  }
+
+  // .footer__text
+
+  &__text {
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+}
+
+.developers {
+  font-size: 16px;
+  // .developers__item
+
+  &__item {
+    margin-bottom: 3px;
+  }
+
+  // .developers__link
+
+  &__link {
+    transition: all 0.3s;
+    &:hover {
+      color: $carrot;
+    }
+  }
+}
+.contacts {
+  grid-area: contacts;
+  justify-self: end;
+
+  // .contacts__link
+
+  &__link {
+    margin-bottom: 16px;
+    transition: all 0.3s;
+    &:hover {
+      color: $carrot;
+    }
+  }
+}
+.social {
+  display: flex;
+  gap: 12px;
+  // .social__link
+
+  &__link {
+    path {
+      fill: #fdeee3;
+      transition: all 0.3s;
+      &:hover {
+        fill: $carrot;
+      }
+    }
+  }
+}

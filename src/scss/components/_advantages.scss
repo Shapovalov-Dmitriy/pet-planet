@@ -1,0 +1,64 @@
+@use "../variables" as *;
+
+.advantages {
+  color: $light;
+  // .advantages__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(417px, 1fr));
+    gap: 24px;
+  }
+
+  // .advantages__item
+
+  &__item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &_house::before {
+      content: "";
+      display: block;
+      width: 256px;
+      height: 256px;
+      background: url("/img/advantages/dog-house.png") top / contain no-repeat;
+    }
+    &_food::before {
+      content: "";
+      display: block;
+      width: 256px;
+      height: 256px;
+      background: url("/img/advantages/dog-food.png") top / contain no-repeat;
+    }
+    &_dog::before {
+      content: "";
+      display: block;
+      width: 256px;
+      height: 212px;
+      margin-top: 20px;
+      margin-bottom: 22px;
+      background: url("/img/advantages/dog.png") top / contain no-repeat;
+    }
+  }
+
+  // .advantages__item-title
+
+  &__item-title {
+  }
+
+  // .advantages__item-text
+
+  &__item-text {
+    flex: 1 1 auto;
+  }
+}
+.advantages-bg {
+  padding: 100px 0;
+  border-radius: 300px 300px 0 0;
+  background-color: $carrot;
+  background-image: url("/img/hero/pattern.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

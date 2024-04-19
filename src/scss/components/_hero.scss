@@ -1,0 +1,21 @@
+@use "../variables" as *;
+.hero {
+  min-height: 100vh;
+  padding: 218px 0 245px;
+  background-color: $purple;
+  background-image: url("/img/hero/bg-dog.png"), url("/img/hero/pattern.svg");
+  background-size: contain, cover;
+  background-position: right, center;
+  background-repeat: no-repeat;
+  color: $light;
+  // .hero__text
+
+  &__title {
+    max-width: 810px;
+    margin-bottom: 50px;
+  }
+
+  &__text {
+    max-width: 420px;
+  }
+}

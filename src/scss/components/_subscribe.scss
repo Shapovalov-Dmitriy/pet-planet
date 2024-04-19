@@ -1,0 +1,62 @@
+@use "../variables" as *;
+@use "../fonts" as *;
+.subscribe {
+  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // .form__field
+
+  &__field {
+    max-width: 732px;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-radius: 40px;
+    border: none;
+  }
+
+  // .form__input
+
+  &__input {
+    border: 2px solid $purple;
+    border-radius: 40px;
+    width: 100%;
+    color: $green;
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: 16px 184px 16px 32px;
+    background-color: transparent;
+    &::placeholder {
+      color: $green;
+      opacity: 0.4;
+    }
+  }
+
+  // .form__btn
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid transparent;
+    padding: 16px 31px;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    &::after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url("/img/subscribe/arrow-up.svg") center / cover no-repeat;
+    }
+  }
+}
