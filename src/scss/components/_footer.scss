@@ -11,19 +11,20 @@
   background-position: 41vw 50px;
   background-size: contain;
 
-  @include laptop {
-    background-size: 311px 295px;
-  }
-
   @include tablet {
     background-image: url("/img/footer/paw-rotate.svg");
+    background-size: 311px 295px;
+    background-position: 41vw 100px;
+  }
+
+  @include laptop {
     background-size: 215px 203px;
-    background-position: 70vw 135px;
+    background-position: 71vw 164px;
   }
 
   @media (max-width: 575px) {
     background-size: 144px 136px;
-    background-position: 61vw 255px;
+    background-position: 62vw 255px;
     font-size: 12px;
   }
   // .footer__container
