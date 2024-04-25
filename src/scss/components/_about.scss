@@ -1,6 +1,17 @@
+@use "../media" as *;
+
 .about {
   padding: 120px 0 278px;
 
+  @include laptop {
+    padding: 100px 0 255px;
+  }
+  @include tablet {
+    padding: 100px 0 181px;
+  }
+  @include mobile {
+    padding: 80px 0 122px;
+  }
   // .about__wrapper
 
   &__wrapper {
@@ -8,6 +19,11 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
     &::before {
       content: "";
       transform: translateY(-18px);
@@ -15,14 +31,35 @@
       flex-basis: 50%;
       height: 478px;
       background: url("/img/about/cat.png") center / contain no-repeat;
+
+      @include laptop {
+        transform: translateY(-14px);
+        height: 319px;
+      }
+
+      @include tablet {
+        transform: translateY(0);
+        flex-basis: 319px;
+        height: auto;
+        width: 408px;
+        max-width: 100%;
+      }
+
+      @include mobile {
+        width: 256px;
+        flex-basis: 191px;
+      }
     }
   }
-
   // .about__content
 
   &__content {
     flex-basis: 50%;
     padding: 10px 24px;
+
+    @include tablet {
+      padding: 10px 0;
+    }
     p:not(:last-child) {
       margin-bottom: 16px;
     }

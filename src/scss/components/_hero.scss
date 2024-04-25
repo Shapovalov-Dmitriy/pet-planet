@@ -1,18 +1,44 @@
 @use "../variables" as *;
+@use "../media" as *;
 .hero {
   min-height: 100vh;
   padding: 218px 0 245px;
   background-color: $purple;
   background-image: url("/img/hero/bg-dog.png"), url("/img/hero/pattern.svg");
   background-size: contain, cover;
-  background-position: right, center;
+  background-position: right bottom, center;
   background-repeat: no-repeat;
   color: $light;
-  // .hero__text
+
+  @include tablet {
+    padding: 148px 0 172px;
+    background-size: 655px 564px, cover;
+  }
+  @include laptop {
+    padding: 108px 0 461px;
+  }
+  @include mobile {
+    background-size: 294px 256px, cover;
+    padding: 100px 0 284px;
+  }
 
   &__title {
-    max-width: 810px;
+    width: 810px;
+    max-width: 100%;
     margin-bottom: 50px;
+    @media (max-width: 1330px) {
+      width: 660px;
+    }
+    @media (max-width: 1100px) {
+      width: 590px;
+    }
+    @include laptop {
+      width: 588px;
+      margin-bottom: 32px;
+    }
+    @include mobile {
+      margin-bottom: 16px;
+    }
   }
 
   &__text {

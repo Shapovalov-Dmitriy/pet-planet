@@ -1,12 +1,31 @@
 @use "../variables" as *;
+@use "../media" as *;
 
 .footer {
   padding: 50px 0 32px;
   background-color: $green;
   color: $light;
+  font-size: 16px;
   background-image: url("/img/footer/paw.svg");
   background-repeat: no-repeat;
   background-position: 41vw 50px;
+  background-size: contain;
+
+  @include laptop {
+    background-size: 311px 295px;
+  }
+
+  @include tablet {
+    background-image: url("/img/footer/paw-rotate.svg");
+    background-size: 215px 203px;
+    background-position: 70vw 135px;
+  }
+
+  @media (max-width: 575px) {
+    background-size: 144px 136px;
+    background-position: 61vw 255px;
+    font-size: 12px;
+  }
   // .footer__container
 
   &__container {
@@ -15,12 +34,21 @@
     grid-template-areas:
       "logo contacts"
       "info contacts";
+
+    @media (max-width: 575px) {
+      row-gap: 0;
+      grid-template-areas:
+        "logo"
+        "contacts"
+        "info";
+    }
   }
 
   // .footer__logo
 
   &__logo {
     grid-area: logo;
+    margin-bottom: 32px;
   }
 
   // .footer__info
@@ -32,20 +60,17 @@
   // .footer__copyright
 
   &__copyright {
-    font-size: 16px;
     margin-bottom: 17px;
   }
 
   // .footer__text
 
   &__text {
-    font-size: 16px;
     margin-bottom: 3px;
   }
 }
 
 .developers {
-  font-size: 16px;
   // .developers__item
 
   &__item {
@@ -64,6 +89,11 @@
 .contacts {
   grid-area: contacts;
   justify-self: end;
+
+  @media (max-width: 575px) {
+    justify-self: start;
+    margin-bottom: 67px;
+  }
 
   // .contacts__link
 
